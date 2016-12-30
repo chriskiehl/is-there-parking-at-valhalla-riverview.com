@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+  <title>Valhalla Riverview - Is parking available</title>
+</head>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+</style>
+
+<body>
+  <div style="
+      display: flex; 
+      width: 100%; 
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+  ">
+    <h1 style="font-family: Roboto,sans-serif;">No.</h1>
+  </div>
+  <div style="
+    font-size: 12px;
+    font-family: Roboto,sans-serif;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 10px 5px 0;
+  ">
+    Parking availability last checked <span style="color: #E91E63" id="current-time"></span>
+  </div>
+</body>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    document.querySelector('#current-time').innerHTML = moment().subtract(5, 'minutes').calendar()
+  });
+</script>
+</html>
